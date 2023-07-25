@@ -118,7 +118,7 @@ def get_cleaned_features(dataset_path, val_video, openface_feat_names, blocksize
     Y_t = []
     for i, video_name in enumerate(video_names):
         if video_name not in val_video:
-            user_name_list = read_json_file(f"{dataset_path}/user_img/{video_name}/user_id2img.json").keys()
+            user_name_list = read_json_file(f"{dataset_path}/person_id/{video_name}.json").keys()
             for user_name in user_name_list:
                 X, Y = load_numpy_data(dataset_path, user_name, video_name, openface_feat_names, blocksize,
                                        sequence_time, feat_names)
