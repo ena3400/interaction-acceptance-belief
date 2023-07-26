@@ -18,15 +18,15 @@ def avi_to_mp4(video_list):
         convert_avi_to_mp4(video_path, output_folder)
 
 
-def video_to_images(video_list):
+def video_to_images(video_list, dataset_path):
     """
     create images folders
     :return:
     """
     for video_name in video_list:
         print(f'Processing {video_name}')
-        video_path = "datasets/home_data/video/" + video_name
-        output_folder = "datasets/home_data/images/" + video_path.split("/")[-1].split(".")[0]
+        video_path = f"{dataset_path}/video/" + video_name
+        output_folder = f"{dataset_path}/images/" + video_path.split("/")[-1].split(".")[0]
         # save_imgs_from_video(video_path, output_folder)
         check_and_create_folder(output_folder)
         save_image_and_time(video_path, output_folder)
@@ -77,7 +77,7 @@ if __name__ == "__main__":
         if vid not in []:
             v.append(vid)
     video_list = v
-    video_to_images(video_list)
+    video_to_images(video_list, dataset_path)
     create_user_img(video_list, dataset_path)
     create_action_reco_feats(video_list, dataset_path)
     create_emotion_feats(video_list, dataset_path)
