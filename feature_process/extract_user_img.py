@@ -174,4 +174,3 @@ if __name__ == "__main__":
             # save_img_user_cropped(img_path)
             save_cropped_img(video_name)
     #save_cropped_img("IMG_0027")
-        # TO DO LISTER LES VIDEO AVEC REFLET SUR ECRAN ET FILTER LES BBOX QUI EN RESSORTE GRAVE A LEUR TAILLE.
